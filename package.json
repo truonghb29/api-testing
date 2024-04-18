@@ -1,69 +1,9 @@
 {
-  "name": "webdriverio-example-recipes",
+  "name": "api-testing",
   "version": "0.0.1",
-  "author": "Christian Bromann <christian@saucelabs.com>",
-  "description": "A set of common automation recipes using WebdriverIO",
-  "homepage": "https://github.com/webdriverio/webdriverio-example-recipes#readme",
-  "license": "MIT",
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/webdriverio/webdriverio-example-recipes.git"
-  },
-  "keywords": [
-    "webdriverio",
-    "recipes",
-    "wdio",
-    "test",
-    "automation"
-  ],
-  "bugs": {
-    "url": "https://github.com/webdriverio/webdriverio-example-recipes/issues"
-  },
   "scripts": {
-    "api/webdriver": "cross-env EXAMPLE_RECIPE=api wdio run ./wdio.conf.js --spec ./api/webdriver/*.js",
-    "click": "cross-env EXAMPLE_RECIPE=click wdio run ./wdio.conf.js --spec ./click/example.js",
-    "component-testing": "run-s component-testing:*",
-    "component-testing:svelte": "wdio run ./wdio.comp.conf.js --spec ./component-testing/svelte-example.js",
-    "customMatchers": "cross-env TS_NODE_PROJECT=./customMatchers/tsconfig.json EXAMPLE_RECIPE=customMatchers wdio run ./wdio.conf.js --spec ./customMatchers/example.ts",
-    "deleteCookies": "cross-env EXAMPLE_RECIPE=deleteCookies wdio run ./wdio.conf.js --spec ./deleteCookies/example.js",
-    "testDownloadBehavior": "run-s testDownload:*",
-    "testDownload:chrome": "cross-env BROWSER=chrome wdio run ./testDownloadBehavior/wdio.conf.js --spec ./testDownloadBehavior/example.js",
-    "testDownload:firefox": "cross-env BROWSER=firefox wdio run ./testDownloadBehavior/wdio.conf.js --spec ./testDownloadBehavior/example.js",
-    "testDownload:edge": "cross-env BROWSER=edge wdio run ./testDownloadBehavior/wdio.conf.js --spec ./testDownloadBehavior/example.js",
-    "emulate": "cross-env EXAMPLE_RECIPE=emulate wdio run ./wdio.conf.js --spec ./emulate/example.js",
-    "getting-started": "node ./getting-started/run-in-script.js",
-    "keys": "cross-env EXAMPLE_RECIPE=keys wdio run ./wdio.conf.js --spec ./keys/keys.js",
-    "overwriteCommand": "cross-env EXAMPLE_RECIPE=overwriteCommand wdio run ./wdio.conf.js --spec ./overwriteCommand/example.js",
-    "queryElements": "run-s queryElements:*",
-    "queryElements:single": "cross-env EXAMPLE_RECIPE=queryElements wdio run ./wdio.conf.js --spec ./queryElements/singleElements.js",
-    "queryElements:multiple": "cross-env EXAMPLE_RECIPE=queryElements wdio run ./wdio.conf.js --spec ./queryElements/multipleElements.js",
-    "queryElements:custom": "cross-env EXAMPLE_RECIPE=queryElements wdio run ./wdio.conf.js --spec ./queryElements/customStrategy.js",
-    "selectors": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js",
-    "selectors:css": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'css selector'",
-    "selectors:linkText": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'link text'",
-    "selectors:partialLinkText": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'partial link text'",
-    "selectors:elementText": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'element text'",
-    "selectors:partialElementText": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'partial element text'",
-    "selectors:tagName": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'tag name'",
-    "selectors:nameAttribute": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'name attribute'",
-    "selectors:xpath": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'xpath'",
-    "selectors:ariaLabel": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'aria-label'",
-    "selectors:ariaLabelledBy": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'aria-labelledby'",
-    "selectors:ariaByContent": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'by content'",
-    "selectors:ariaByTitle": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'by title'",
-    "selectors:ariaByAlt": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'by alt property'",
-    "selectors:ariaRole": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'by role attribute'",
-    "selectors:js": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'js function'",
-    "selectors:deep": "cross-env EXAMPLE_RECIPE=selectors wdio run ./wdio.conf.js --spec ./selectors/example.js --mochaOpts.grep 'deep selector'",
-    "setup": "run-s setup:*",
-    "setup:webdriver": "node ./setup/webdriver.js",
-    "setup:devtools": "node ./setup/devtools.js",
-    "setup:standalone": "node ./setup/standalone.js",
-    "setup:testrunner": "wdio run ./wdio.conf.js --spec ./setup/testrunner.js",
-    "timezone": "node ./timezone/custom-timezones.js",
-    "waitForDisplayed": "cross-env EXAMPLE_RECIPE=waitForDisplayed wdio run ./wdio.conf.js --spec ./waitForDisplayed/waitForDisplayedExample.js",
-    "waitUntil": "cross-env EXAMPLE_RECIPE=waitUntil wdio run ./wdio.conf.js --spec ./waitUntil/waitUntilExample.js"
+    "test": "mocha api/*.js"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.1.0",
@@ -75,11 +15,17 @@
     "@wdio/mocha-framework": "^8.36.0",
     "@wdio/spec-reporter": "^8.36.0",
     "@wdio/static-server-service": "^8.36.0",
+    "axios-mock-adapter": "^1.22.0",
+    "chai": "^5.1.0",
     "cross-env": "^7.0.3",
     "devtools": "^8.36.0",
+    "mocha": "^10.4.0",
     "npm-run-all": "^4.1.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
     "webdriverio": "^8.36.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.8"
   }
 }
