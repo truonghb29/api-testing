@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "test": "mocha api/*.js"
+    "test": "npx wdio run ./wdio.conf.js"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.1.0",
