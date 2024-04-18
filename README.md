@@ -1,13 +1,14 @@
-# WebdriverIO Example Recipes [![Test](https://github.com/webdriverio/example-recipes/actions/workflows/test.yml/badge.svg)](https://github.com/webdriverio/example-recipes/actions/workflows/test.yml)
-
-This repository contains a set of common automation recipes using WebdriverIO. Many of them are used in the official [project docs](https://webdriver.io) and tested here in [CI](https://github.com/webdriverio/example-recipes/actions).
+---
+runme:
+  id: 01HVRWRY3NPS3CENEYKTHE7PPR
+  version: v3
+---
 
 ## Prerequisite
 
-Make sure to run this first, to set up this repository:
-
-```sh
+```sh {"id":"01HVRWRY3M4KKV7W6EP4XM901Z"}
 npm install
+
 ```
 
 ## Run Examples
