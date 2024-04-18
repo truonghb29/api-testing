@@ -6,10 +6,10 @@ describe("API testing Auth", () => {
     try {
       const response = await axios({
         method: "post",
-        url: "https://reqres.in/api/register",
+        url: "https://dynasty-ws.vtaan.id.vn/api/auth/user/register",
         data: {
-          email: "eve.holt@reqres.in",
-          password: "pistol",
+          email: "thanhtruong",
+          password: "thanhtruong",
         },
       });
 
@@ -23,8 +23,12 @@ describe("API testing Auth", () => {
   it("login", async () => {
     try {
       const response = await axios({
-        method: "get",
-        url: "https://dynasty-ws.vtaan.id.vn/api/users/65a2d4d1ae68e6dcc7ac0ce0",
+        method: "post",
+        url: "https://dynasty-ws.vtaan.id.vn/api/auth/user/login",
+        data: {
+          username: "admin",
+          password: "13112002",
+        },
       });
 
       expect(response.status).to.equal(200);
